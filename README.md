@@ -1,6 +1,6 @@
 #alikaragoz.net
 
-A very simple photo written in Rails. Before that I was using a custom Wordpress theme until I decide to write my own blogging engine.
+A very simple photoblog engine written in Rails.
 
 ![](https://raw.github.com/alikaragoz/alikaragoz.net/master/doc/alikaragoz.net-screenshot.png)
 
