@@ -2,6 +2,8 @@
 
 A very simple photo written in Rails. Before that I was using a custom Wordpress theme until I decide to write my own blogging engine using Markdown syntax.
 
+![](https://raw.github.com/alikaragoz/alikaragoz.net/master/doc/alikaragoz.net-screenshot.png)
+
 ##Installation
 
 **Note:** I am using Ruby 1.9.3 and Rails 3.2.8. If you are not familiar with Rails please try to document yourself a little bit before digging into this.
@@ -50,6 +52,11 @@ You have to define environment variables in order to access the administration: 
 - The images should be placed into : `/public/photos/picture.jpg`
 - The images should be placed into : `/public/thumbnails/picture_thumbnail.jpg` (Note the extension of the thumbnails `_thumbnail.jpg`)
 - To pick a specific image for the thumbnails just do that `![x](/photos/picture.jpg)`
+
+Take a look at this script : [`post.command`](https://github.com/alikaragoz/alikaragoz.net/blob/master/doc/post.command). It resizes, uploads and generates a post automatically for you.  
+You only need to put images in the same folder as `post.command` and double click on it.   
+**Note:** Before using this script, open it and edit the variables inside accordingly to your preferences.
+
 
 ##Todo
 - Better management of images
