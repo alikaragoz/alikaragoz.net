@@ -1,0 +1,141 @@
+@import "bourbon";
+@import "constants";
+@import "global";
+@import "pagination";
+@import "header";
+@import "footer";
+@import "gallery";
+@import "admin";
+@import "errors";
+
+// Single Post
+article {
+  @include transition (opacity 0.15s ease-in-out);
+  img {
+    margin: 20px 0 10px 0;
+    width: 100%;
+
+    @media #{$ipad-landscape} {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  p {
+    line-height: 28px;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      color: #333333;
+    }
+  }
+  
+  &.unpublished {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1.0;
+    } 
+  }
+
+  // Post Header
+  header {
+    float: clear;
+    margin: 30px 0 10px 0;
+    font-weight: bold;
+    font-size: 14px;
+
+    @media #{$ipad-landscape} {
+      margin: 20px 0;
+      font-size: 12px;
+    }
+
+    b {
+      color: #959595;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    h2 {
+      font-size: 22px;
+      display: inline;
+      color: #292929;
+      float: left;
+      padding-right: 7px;
+    }
+
+    .date {
+      padding-top: 7px;
+      float: left;
+      color: #cacaca;
+      @media #{$iphone-portrait} {
+        padding-top: 9px
+      }
+    }
+
+    .tags {
+      color: #cacaca;
+      clear: left;
+      padding-top: 5px;
+    }
+  }
+}
+
+// About
+article.about {
+  font-size: 16px;
+  margin: 30px 0 40px 0;
+
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #666666;
+    padding: 20px 0 10px 0;
+  }
+
+  img {
+    display: block;
+    margin: 0;
+    border-radius: 5px;
+  }
+
+  p {
+    margin: 0 0 16px 0;
+    line-height: 20px;
+  }
+
+  .about-img {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: left;
+    margin: 0 15px 10px 0;
+  }
+
+  @media #{$ipad-landscape} {
+    margin: 0 0 0 0;    
+  }
+
+  @media #{$iphone-landscape} {
+    .about-img {
+      width: 200px;
+      height: 200px;
+    }   
+  }
+
+  @media #{$iphone-portrait} {
+    .about-img {
+      width: 300px;
+      height: 300px;
+    }   
+  }
+}

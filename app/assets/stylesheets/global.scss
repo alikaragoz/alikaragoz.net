@@ -1,0 +1,68 @@
+@import "reset";
+
+// Global
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+     html {
+        -webkit-text-size-adjust: none;
+     }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font;
+  font-size: $font-size;
+  padding: 0 10px;
+}
+
+section, header, footer {
+  max-width: $layout-width + $layout-border-margin;
+  margin: 0 auto;
+  
+  @media #{$laptop} {
+	  max-width: $layout-width-laptop + $layout-border-margin;
+  }
+  
+}
+
+a {
+  color: $text-color;
+  text-decoration: underline;
+  font-weight: bold;
+  @include transition (color 0.05s ease-in-out);
+}
+
+b {
+  font-weight: bold;
+}
+
+// Hide text in a div where there is only an image
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.decoration-line {
+  display: block;
+  height: 2px;
+  background-color: #d5d5d5;
+  @include box-shadow(0px 1px 0px #f8f8f8);
+  margin-top: 4px;
+}
+
+.clear {
+  clear: both;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style:italic;
+}

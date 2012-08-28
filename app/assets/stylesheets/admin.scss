@@ -1,0 +1,101 @@
+form {
+  margin: 40px 0 0 0;
+}
+
+.field_input {
+  width: 100%;
+  border: 1px solid #C9D0D6;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #FEFEFE;
+
+  &:hover {
+    border: 1px solid #BBB;
+    @include box-shadow(0 0px 2px #A2A2A2);
+  }
+}
+
+input, textarea, select, .delete {
+  outline: none;
+  border: none;
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: #FEFEFE;
+  width: 100%;
+  color: #666;
+  font-family: $font;
+  -webkit-appearance: none;
+}
+
+label {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+textarea {
+  font-size: 14px;
+  text-indent: 0;
+  max-width: 100%;
+  padding: 5px 10px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+input[type=submit], .delete {
+  width: inherit;
+  border: 1px solid #C9D0D6;
+  border-radius: 3px;
+  margin: 20px 0 0 0;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:focus, &:hover {
+    border: 1px solid #BBB;
+    @include box-shadow(0 0px 2px #A2A2A2);
+  }
+}
+
+input[type=submit] {
+  padding: 8px 10px;
+  font-weight: bold;
+}
+
+.delete {
+  color: #C7232E;
+}
+
+select {
+  border: 1px solid #C9D0D6;
+  border-radius :3px;
+
+  &:focus {
+    border: 1px solid #BBB;
+    @include box-shadow(0 0px 2px #A2A2A2);
+  }
+}
+
+#error_explanation {
+
+  border-radius: 5px;
+  background-color: #E2E2E2;
+  border: 1px solid #DEDEDE;
+  padding: 15px;
+  margin: 10px 0 10px 0;
+
+  h2 {
+    font-weight: bold;
+  }
+
+  ul {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+
+  li {
+    margin: 5px 0 0 10px;
+    list-style-type:circle;
+    list-style-position:inside;
+  }
+}

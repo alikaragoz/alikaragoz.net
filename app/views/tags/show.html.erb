@@ -1,0 +1,117 @@
+<%= title "Tag: " + @tag.name %>
+
+<div id="categories">
+	<input type="checkbox" id="checkbox-menu" checked="checked">  <!-- Hidden -->
+	<label id="category-menu" for="checkbox-menu">
+	    <button id="category-selector"><%= @tag.name %> <span>▾</span></button>
+	</label>
+	<div id ="category-list">
+		<div class="category">
+			<h3>Places</h3>
+			<ul>
+				<%= category_li 'Street' %>
+				<%= category_li 'Metro' %>
+				<%= category_li 'Parkings' %>				
+			</ul>
+		</div>
+
+		<div class="category">
+			<h3>Misc</h3>
+			<ul>
+				<%= category_li 'All' %>
+				<%= category_li 'Sky' %>
+				<%= category_li 'Black & White' %>
+				<%= category_li 'Architecture' %>
+				<%= category_li 'Abandoned' %>
+			</ul>
+		</div>
+
+		<div class="category">
+			<h3>Humans</h3>
+			<ul>
+				<%= category_li 'Women' %>
+				<%= category_li 'Men' %>
+				<%= category_li 'Self Portraits' %>
+			</ul>
+		</div>
+
+		<div class="category">
+			<h3>Cities</h3>
+			<ul>
+				<%= category_li 'Paris' %>
+				<%= category_li 'London' %>
+				<%= category_li 'Tours' %>
+				<%= category_li 'Angers' %>
+				<%= category_li 'Budapest' %>
+				<%= category_li 'Boston' %>
+			</ul>
+		</div>
+
+		<div class="category">
+			<h3>Cameras</h3>
+			<ul>
+				<%= category_li 'Canon 5D Mark II' %>
+				<%= category_li 'Canon 5D Mark III' %>
+				<%= category_li 'Canon 30D' %>
+				<%= category_li 'Canon 350D' %>
+				<%= category_li 'Nikon D700' %>
+				<%= category_li 'Leica M6' %>
+				<%= category_li 'Canon IXUS 40' %>
+			</ul>
+		</div>
+
+		<div class="category">
+			<h3>Lenses (1/2)</h3>
+			<ul>
+				<%= category_li 'Summicron 35' %>
+				<%= category_li 'Sigma 50mm f/1.4' %>
+				<%= category_li 'Nikkor 50mm f/1.4' %>
+				<%= category_li 'Nikkor 35mm f/2' %>
+				<%= category_li 'Canon 85mm f/1.8' %>
+				<%= category_li 'Canon 50mm f/1.8' %>
+			</ul>
+		</div>
+
+		<div class="category">
+			<h3>Lenses (2/2)</h3>
+			<ul>
+				<%= category_li 'Canon 50mm f/1.4' %>
+				<%= category_li 'Canon 35mm f/1.4' %>
+				<%= category_li 'Canon 18-55mm' %>
+				<%= category_li 'Canon 17-40mm' %>
+				<%= category_li 'Canon 10-22mm' %>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<% i = 1 %>
+<% @posts.each do |p| %>
+	
+	<% multiple_post = "<span>(#{image_number p} photos)</span>" unless (image_number p) == 1 %>
+
+	<% thumb_link = "<a href=\"#{url_for p}\"><article class=\"thumbail_info\"><header>#{capit(p.title)}</header>#{multiple_post}<div class=\"date\">Posted on <time datetime=\"#{p.created_at.as_json}\">#{post_published_time p}</time></div></article></a>" %>
+
+	<% thumbnail =  "<div class=\"thumbnail #{"unpublished" if authenticated? && !p.status}\"><img src=\"#{get_thumbnail p}\">#{thumb_link}</div>" %>
+
+	<% fourcol = "<div class=\"fourcol\">#{thumbnail}</div>".html_safe %>
+	<% fourcol_last = "<div class=\"fourcol last\">#{thumbnail}</div>".html_safe %>
+
+	<% if i == 1 %>
+		<div class="row">
+		<%= fourcol %>
+	<% elsif (i % 3) == 0 %>
+		<%= fourcol_last %>
+		</div>
+		<div class="row">
+	<% elsif i == @posts.count %>
+		<%= fourcol %>
+		</div>
+	<% else %>
+		<%= fourcol %>
+	<% end %>
+
+	<%  i += 1 %>
+<% end %>
+<%= paginate @posts %>

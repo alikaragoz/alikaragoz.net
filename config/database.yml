@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: alikaragoz_dev
+  host: localhost
+  pool: 5
+  username: alikaragoz
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: alikaragoz_test
+  host: localhost
+  pool: 5
+  username: alikaragoz
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: alikaragoz_prod
+  host: localhost
+  pool: 5
+  username: alikaragoz
+  password:

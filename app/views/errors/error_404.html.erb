@@ -1,0 +1,9 @@
+<%= title "Error 404" %>
+
+
+<article class="server_error">
+<header>
+  <h1>404</h1>
+</header>
+<p>Something has gone wrong. What you're looking for doesn't exist or has been deleted. If you think I should be aware of this please send me an <a href="mailto:mail@alikaragoz.net?subject=Page%20Not%20Found&body=Hello%20Super%20Ali%0A%0AThere%20is%20a%20404%20error%20on%20this%20page%20:%20<%= "http://#{request.host}:#{request.port.to_s + request.fullpath}" %>%0A%0AKisses">email</a>  otherwise <%= link_to 'go home', root_url %>.</p>
+</article>

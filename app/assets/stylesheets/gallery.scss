@@ -1,0 +1,258 @@
+// Browse
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+}
+
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
+  margin-right: 3.8%;
+  float: left;
+  position: relative;
+}
+
+.row .onecol {
+ width: 4.85%;
+}
+
+.row .twocol {
+ width: 13.45%;
+}
+
+.row .threecol {
+ width: 22.05%;
+}
+
+.row .fourcol {
+ width: 30.75%;
+}
+
+.row .fivecol {
+ width: 39.45%;
+}
+
+.row .sixcol {
+ width: 48%;
+}
+
+.row .sevencol {
+ width: 56.75%;
+}
+
+.row .eightcol {
+ width: 65.4%;
+}
+
+.row .ninecol {
+ width: 74.05%;
+}
+
+.row .tencol {
+ width: 82.7%;
+}
+
+.row .elevencol {
+ width: 91.35%;
+}
+
+.row .twelvecol {
+ width: 100%;
+ float: left;
+}
+
+.last {
+  margin-right: 0px;
+}
+
+img, object, embed {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* Mobile */
+
+@media #{$iphone-landscape} {
+  .row {
+    min-width: 0;
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol, .row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvecol {
+    width: auto;
+    float: none;
+    margin: 0 0 10px 0;
+  }
+
+}
+
+#checkbox-menu {
+  display: none;
+}
+
+#checkbox-menu:checked ~ #category-list {
+  display: none;
+}
+
+#checkbox-menu:not(:checked) ~ #category-list {
+}
+
+#checkbox-menu:checked ~ #category-selector {
+  display: none;
+}
+
+#category-menu {
+
+  #category-selector {
+    text-decoration: none;
+    color: #333333;
+    font-size: 19px;
+    background-color: #E6E6E6;
+    padding: 4px 10px;
+    @include box-shadow(0px 1px 0px #FFFFFF, 0px 1px 0px #FFFFFF inset);
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #DDDDDD;
+    }
+
+    &:active {
+      background-color: #D3D3D3;
+      @include box-shadow(0px 1px 0px #FFFFFF, 0px 1px 0px #FFFFFF inset);
+    }
+  }
+}
+
+#categories {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin: 20px 0 20px 0;
+}
+
+#category-list {
+  background-color: #E2E2E2;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #DEDEDE;
+  margin: 20px 0 10px 0;
+  text-align: justify;
+
+  .category {
+    width: 167px;
+    display: inline-block; 
+    margin: 0 0 10px 0;
+    vertical-align: text-top;
+    text-align: left;
+
+    a {
+      text-decoration: none;
+      font-weight: normal;
+      color: #999;
+
+      &:hover {
+        text-decoration: underline;
+        color: #666;
+      }
+    }
+
+    h3 {
+      color: #333333;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 20px 0px 10px 10px;
+    }
+
+    li {
+      padding: 5px 0 5px 10px;
+      font-size: 15px;
+      color: #999999;
+
+      span {
+        font-size: 13px;
+        font-weight: bold;
+        background-color: #F0F0F0;
+        margin: 0 0 0 5px;
+        padding: 1px 3px;
+        border-radius: 3px;
+        border: 1px solid #E2E2E2;
+        @include box-shadow(0px 1px 1px #C9C9C9);
+      }
+    }
+  }
+}
+
+#gallery {
+}
+
+.thumbnail {
+  line-height: 0;
+  border: 1px solid #AAA;
+  border-radius: 5px;
+  
+  &.unpublished {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+
+  img {
+    border-radius: 4px;
+  }
+
+  a {
+    line-height: 1;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    @include transition (all 0.1s ease-in-out);
+    opacity: 0;
+    
+    &:hover {
+       opacity: 1;
+     }
+  }
+
+  article {
+    padding: 10px;
+    padding: 15px 0 0 5px;
+    header {
+      padding: 15px 0 0 10px;
+      font-size: 18px;
+      color: #333333;
+      display: inline;
+      margin: 10px 10px 0 0;
+
+      span {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        color: #6E6E6E;
+      }
+    }
+    .date {
+      font-size: 12px;
+      color: #6E6E6E;
+      font-weight: bold;
+      padding: 5px 0 0 10px;
+    }
+  }
+}

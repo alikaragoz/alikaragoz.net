@@ -1,0 +1,22 @@
+<%# We render a single in the index %>
+<% if type == "index" %>
+	<article <%= "class=unpublished" if authenticated? && !post.status %>>
+		<header>
+			<h2><%= link_to capit(post.title), post %></h2>
+			<div class="date">Posted on <time datetime="<%= post.created_at.as_json %>"><%= post_published_time post %></time><%= edit_link post %></div>
+			<div class="tags"><%= post_tags_html post %></div>
+		</header>
+		<%= markdown(post.body) %>
+	</article>
+
+<%# We render a single post %>
+<% elsif type == "post" %>
+	<article <%= "class=unpublished" if authenticated? && !post.status %>>
+		<header>
+			<h2><%= capit(post.title) %></h2>
+			<div class="date">Posted on <time datetime="<%= post.created_at.as_json %>"><%= post_published_time post %></time><%= edit_link post %></div>
+			<div class="tags"><%= post_tags_html post %></div>
+		</header>
+		<%= markdown(post.body) %>
+	</article>
+<% end %>

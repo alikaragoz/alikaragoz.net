@@ -1,0 +1,58 @@
+// Pagination
+nav {
+  font-size: 13px;
+  text-align: center;
+  
+  #pagination {
+    margin: 20px auto 30px auto;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: normal;
+    min-width: 26px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    margin-right: 6px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    color: #999;
+    @include box-shadow(0px 1px 0px #FFFFFF, 0px 1px 0px #FFFFFF inset);
+    @include transition(all 0.05s ease-in-out);
+
+    &:hover {
+      background-color: #E3E2E2;
+      @include box-shadow(0px 1px 0px #FFFFFF inset, 0px 1px 4px #DDDDDD);
+    }
+  }
+
+  a.current {
+    background-color: #E3E2E2;
+    pointer-events: none;
+    cursor: default;
+    @include box-shadow(0px 1px 0px #FFFFFF inset, 0px 1px 4px #DDDDDD);
+    font-weight: bold;
+  }
+
+  a.prev, a.next, a.post {
+    padding: 0 6px;
+  }
+
+  span.gap {
+      margin-right: 6px;
+      min-width: 25px;
+  }
+
+  @media #{$iphone-portrait} {
+    span {
+      display: none;
+    }
+
+    span.current, span.prev, span.next {
+      display: inline-block;
+    }
+  }
+}

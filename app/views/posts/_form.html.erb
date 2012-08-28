@@ -1,0 +1,36 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>There are some errors (<%= pluralize(@post.errors.count, "error") %>) :</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <div class="field_input"><%= f.text_field :title, :tabindex => 1 %></div>
+  </div>
+  <div class="field">
+    <%= f.label "Tags" %>
+    <div class="field_input"><%= f.text_field :tag_names, :tabindex => 2 %></div>
+  </div>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, {"Published" => true, "Unpublished" => false},{}, :tabindex => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <div class="field_input"><%= f.text_area :body, :wrap => "soft", :tabindex => 4 %></div>
+  </div>  
+  <div class="actions">
+    <%= f.submit :tabindex => 5 %>
+    <% if defined? type and type == 'edit' %>
+      <%= link_to "Delete", @post, :data => {:confirm => 'Are you sure?'}, :method => :delete, :class => "delete", :tabindex => 6 %>
+    <% end %>
+  </div>
+<% end %>

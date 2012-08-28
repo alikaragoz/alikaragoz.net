@@ -1,0 +1,48 @@
+<%# Post Content : Header %>
+<% content_for :pre_content do %>
+<header>
+	<div id="logo"></div>
+	<ul>
+		<li><a <%= is_current 'posts' %> href="/">Home</a></li>
+		<li><a <%= is_current 'tags' %> href="/tags/all">Browse</a></li>
+		<li><a <%= is_current 'pages' %> href="/about">About</a></li>
+		<li><div class="decoration-line"></div></li>
+	</ul>
+</header>
+<section>
+<% end %>
+
+<%# Post Content : Footer %>
+<% content_for :post_content do %>
+</section>
+<footer>
+	<div class="decoration-line"></div>
+	<div class="fabout">
+		<h3>About</h3>
+		<p>Hi, my name is <a href="/tags/self-portraits">Ali</a> and I'm a software engineer at <a href="http://appsfire.com">Appsfire</a> in Paris, France. <br>I'm passionate about photography, design and <a href="http://github.com/alikaragoz">development</a>. I exclusively shoot with <a href="/tags/canon-35mm-f-1-4">35mm</a> and <a href="/tags/canon-50mm-f-1-4">5</a><a href="/tags/nikkor-50mm-f-1-4">0</a><a href="/tags/sigma-50mm-f-1-4">m</a><a href="/tags/canon-50mm-f-1-8">m</a> and prime lenses.</p>
+	</div>
+	<div class="flogo"></div>
+	<div class="fsocial">
+		<h3>Elsewhere</h3>
+		<p>You should follow me on:</p>
+		<ul>
+			<li>● <a href="http://flickr.com/alikaragoz">flickr</a>.com/photos/alikaragoz</li>
+			<li>● alikaragoz.<a href="http://blog.alikaragoz.net">tumblr</a>.com</li>
+			<li>● <a href="http://twitter.com/alikaragoz">twitter</a>.com/alikaragoz</li>
+			<li>● <a href="http://github.com/alikaragoz">github</a>.com/alikaragoz</li>
+		</ul>
+	</div>
+	<div class="fcopyright">
+		Copyright 2005 - <%= Time.now.year %> ● <a href="mailto:mail@alikaragoz.net?subject=Hello%20Ali">Ali Karagoz</a> <br>
+		15, rue Montbrun, 75014 Paris, France<br>
+		Tel.: +33 (0) 6 50 01 24 58<br>
+	</div>
+	<% if authenticated? %>
+	<div class="logout">
+		<a class="current post" href="/logout">Logout</a>
+	</div>
+	<% end %>
+</footer>
+<% end %>
+
+<%= render :file => "layouts/abstract" %>

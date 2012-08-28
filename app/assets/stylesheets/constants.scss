@@ -1,0 +1,30 @@
+// Colors
+$background-color: #F0F0F0;
+$text-color: #777777;
+
+// Fonts
+$font: $helvetica;
+$font-size: 16px;
+
+$layout-width: 1200px;
+$layout-width-laptop: 960px;
+$layout-border-margin: 0px;
+
+// Media Queries
+$iphone-portrait: "screen and (max-width: 320px)";
+$iphone-landscape: "screen and (max-width: 480px)";
+$ipad-portrait: "screen and (max-width: 768px)";
+$ipad-landscape: "screen and (max-width: 1024px)";
+$laptop: "screen and (max-width: 1280px)";
+
+// Retina images
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+    & {
+      background-image: url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+    }
+  }
+}

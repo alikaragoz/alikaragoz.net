@@ -1,0 +1,11 @@
+/* TEAM */
+Designer:     Ali Karagoz
+Developer:    Ali Karagoz
+Contact:      mail@alikaragoz.net
+Twitter:      @alikaragoz
+
+/* SITE */
+Last update:  04/08/12
+Language:     English
+Doctype:      HTML5
+Tools:        Ruby on Rails, HTML, CSS

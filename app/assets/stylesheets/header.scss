@@ -1,0 +1,51 @@
+// Header
+
+body > header {
+  $logo-size: 50px;
+  margin: 20px auto;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      border-bottom: 2px solid black;
+      padding-bottom: 2px;
+      color: #333333;
+      @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+        padding-bottom: 1px;
+      }
+    }
+  }
+
+  ul {
+    font-weight: bold;
+    height: 22px;
+    margin-left: $logo-size;
+    padding-top: 14px;
+  }
+
+  li {
+    display: inline;
+    margin-right: 10px;
+    font-size: 20px;
+ 
+  }
+  a.current {
+    border-bottom: 2px solid #333333;
+    color: #333333;
+    padding-bottom: 2px;
+    @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+      padding-bottom: 1px;
+    }
+  }
+  
+  #logo {
+    display: block;
+    width: $logo-size;
+    height: $logo-size;
+    background-repeat: no-repeat;
+    @include background-image-retina("h-logo", 'png', 50px, 47px);
+    float: left;
+  }
+}

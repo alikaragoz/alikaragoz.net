@@ -1,0 +1,9 @@
+<%= title "Error 500" %>
+
+
+<article class="server_error">
+<header>
+  <h1>500</h1>
+</header>
+<p>Something has gone wrong. I'm working hard to fix this. If this takes too much time send me an <a href="mailto:mail@alikaragoz.net?subject=Internal%20Server%20Error&body=Hello%20Super%20Ali%0A%0AThere%20is%20a%20500%20error%20on%20this%20page%20:%20<%= "http://#{request.host}:#{request.port.to_s + request.fullpath}" %>%0A%0AKisses">email</a>  otherwise <%= link_to 'go home', root_url %>.</p>
+</article>

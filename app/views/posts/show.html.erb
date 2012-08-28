@@ -1,0 +1,24 @@
+<%= title "Post: " + @post.title.capitalize %>
+
+<%= render :partial => "post", :object => @post, :locals => {:type => "post"} %>
+
+<nav>
+	<div id="pagination">
+    <% previous_post = @post.previous; if previous_post %>
+      <span class="prev">
+        <%= link_to "‹ #{previous_post.title}".html_safe, previous_post, :class => 'prev' %>
+      </span>
+    <% else %>
+      <span class="page current"><a href="#" class="current post">This is the first post</a></span>
+    <% end %>
+    
+    <% next_post = @post.next; if next_post %>
+      <span class="next">
+        <%= link_to "#{next_post.title} ›".html_safe, next_post, :class => 'next' %>
+      </span>
+    <% else %>
+      <span class="page current"><a href="#" class="current post">This is the latest post</a></span>
+    <% end %>
+		
+	</div>
+</nav>
