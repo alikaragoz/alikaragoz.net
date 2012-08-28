@@ -1,6 +1,6 @@
 #alikaragoz.net
 
-A very simple photo written in Rails. Before that I was using a custom Wordpress theme until I decide to write my own blogging engine using Markdown syntax.
+A very simple photo written in Rails. Before that I was using a custom Wordpress theme until I decide to write my own blogging engine.
 
 ![](https://raw.github.com/alikaragoz/alikaragoz.net/master/doc/alikaragoz.net-screenshot.png)
 
@@ -42,6 +42,7 @@ To avoid that you have to create a post and associate it to the tag named "All".
 You have to define environment variables in order to access the administration: `ADMIN_USERNAME` and `ADMIN_PASSWORD`.
 
 ## Publishing
+[Markdown](http://daringfireball.net/projects/markdown/) syntaxe is used for blog post edition.
 
 ### Edition
 - To access the admin and create new posts, go to <http://localhost:3000/login>.
