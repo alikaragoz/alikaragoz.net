@@ -58,6 +58,8 @@ Take a look at this script : [`post.command`](https://github.com/alikaragoz/alik
 You only need to put images in the same folder as `post.command` and double click on it.   
 **Note:** Before using this script, open it and edit the variables inside accordingly to your preferences.
 
+## Reminder
+I've included the logos of my own website in this repository, please do not use them if you are planning to use this photoblog engine. Thanks!
 
 ##Todo
 - Better management of images
