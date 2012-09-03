@@ -59,4 +59,9 @@ module PostsHelper
   def edit_link post
     (" " + link_to('(Edit)', edit_post_path(post))).html_safe if authenticated?
   end
+  
+  # Displaying the atom images in a different size
+  def atomed_post(text, width)
+    markdown(text).gsub( "<img", "<img width=\"#{width}\"")
+  end
 end
