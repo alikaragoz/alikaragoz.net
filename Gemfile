@@ -9,6 +9,9 @@ gem 'pg'
 # Rails Server
 gem 'thin'
 
+# JS Runtime 
+gem 'therubyracer'
+
 # Markdown interpreter
 gem 'redcarpet'
 
