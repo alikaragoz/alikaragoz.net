@@ -2,7 +2,7 @@
 
 A very simple photoblog engine written in Rails.
 
-![](https://raw.github.com/alikaragoz/alikaragoz.net/master/doc/alikaragoz.net-screenshot.png)
+<p align="center"><img src="https://raw.github.com/alikaragoz/alikaragoz.net/master/doc/alikaragoz.net-screenshot.png" /></p>
 
 ##Installation
 
